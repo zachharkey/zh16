@@ -1,0 +1,91 @@
+/******************************************************************************
+ * Background Images
+*******************************************************************************/
+.-cover {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+.-cover--top {
+    background-position: 50% 0;
+    }
+.-cover--right {
+    background-position: 100% 50%;
+    }
+.-cover--bottom {
+    background-position: 50% 100%;
+    }
+.-cover--left {
+    background-position: 0 50%;
+    }
+
+
+
+/******************************************************************************
+ * ProperJS ImageLoader
+*******************************************************************************/
+.-is-lazy-loading {
+    opacity: 0;
+    }
+.-is-lazy-transition {
+    transition: opacity $ease-duration $ease-cubic;
+    }
+.-is-lazy-loaded {
+    opacity: 1;
+    }
+.-is-lazy-handled {
+    // Just a good hook
+    }
+
+
+
+/******************************************************************************
+ * Typography
+*******************************************************************************/
+.-text--center {
+    text-align: center;
+    }
+.-text--right {
+    text-align: right;
+    }
+.-text--left {
+    text-align: left;
+    }
+.-light {
+    color: $white;
+    }
+.-dark {
+    color: $dark;
+    }
+.-grey {
+    color: $grey-text;
+    }
+.-brackets {
+    &:before {
+        content: "[ ";
+        }
+    &:after {
+        content: " ]";
+        }
+    }
+
+
+
+/******************************************************************************
+ * Fills
+*******************************************************************************/
+.-bg-black {
+    background-color: $black;
+    }
+
+
+/******************************************************************************
+ * Display
+*******************************************************************************/
+.-block {
+    display: block;
+    }
+.-span {
+    display: inline-block;
+    vertical-align: middle;
+    }

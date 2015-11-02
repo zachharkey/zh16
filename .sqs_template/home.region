@@ -1,0 +1,11 @@
+{###############################################################################
+    Home region
+
+    This gets applied in `template.conf` under layouts.
+    This region/layout is for unique home pages.
+    You can also use static pages for that as well.
+    Or you could not use this at all, in which case you should trash it!
+###############################################################################}
+<div class="home js-home" data-content-field="main-content">
+    {squarespace.main-content}
+</div>

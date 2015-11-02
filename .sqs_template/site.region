@@ -1,0 +1,9 @@
+{###############################################################################
+    Site region
+
+    This gets applied in `template.conf` under layouts.
+    Squarespace recommends the `data-content-field` for stuff, so yeah.
+###############################################################################}
+<div data-content-field="main-content">
+    {squarespace.main-content}
+</div>

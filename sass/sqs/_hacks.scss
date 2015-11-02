@@ -1,0 +1,10 @@
+/******************************************************************************
+ * Squarespace Hacks
+ *
+ * This is the nitty gritty on hacking some system renderings.
+*******************************************************************************/
+
+// Remove this if you are making a store.
+.absolute-cart-box {
+    display: none !important;
+    }

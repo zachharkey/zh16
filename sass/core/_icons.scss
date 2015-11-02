@@ -1,0 +1,98 @@
+/******************************************************************************
+ * Icons
+*******************************************************************************/
+.icon {
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $icon-font;
+    font-size: $icon-size;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    vertical-align: middle;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+.icon--light {
+    color: $white;
+    }
+
+
+
+/******************************************************************************
+ * Icon Types
+ *
+ * Usually managed through IcoMoon
+ * https://icomoon.io/
+ *
+ * See ./sass/core/_fonts.scss for the @font-face implementation
+ *
+ * These are class structures such as `icon--list` or `icon--arrow-left`
+*******************************************************************************/
+
+
+
+/******************************************************************************
+ * CSS Drawn Icons
+ *
+ * These faux icons are useful for things that CSS can draw really well.
+ * Use your best judgement on what should be drawn with CSS vs in the font.
+*******************************************************************************/
+.icon--faux {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    }
+.icon--faux__wrap {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    }
+
+
+.icon--list {
+    }
+.icon--list__wrap {
+    border-top: 2px solid $dark;
+    height: 18px;
+    width: 24px;
+
+    &:after,
+    &:before {
+        background-color: $dark;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        }
+    &:after {
+        bottom: 0;
+        }
+    &:before {
+        margin-top: -2px;
+        top: 50%;
+        }
+    }
+
+
+.icon--play {
+    width: 16px;
+    }
+.icon--play__wrap {
+    // Together these make the height
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+
+    // This makes the width
+    border-left: 12px solid $white;
+    height: 0;
+    width: 0;
+    }

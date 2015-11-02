@@ -1,0 +1,17 @@
+{###############################################################################
+    Intro block
+
+    This is applied in `_footer.region`
+    It has a complimentary sass file at `../sass/modules/_loading.scss`
+    It has a complimentary js file at `../js/loading/intro.js`
+
+    This is a nice way to have a branded/unique initial load moment.
+    If you don't need/want this for your project, get it the fuck out!
+###############################################################################}
+<section class="intro js-intro screen is-active">
+    <div class="screen__wrap valigner">
+        <div class="valigner__cell">
+            <div class="h1">Templar</div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+.intro {
+    text-align: center;
+    }
+
+
+
+.bar {
+    font-size: 0;
+    height: 10px;
+    left: 0;
+    position: fixed;
+    text-align: left;
+    transition: opacity $ease-duration $ease;
+    width: 100%;
+    z-index: ($z_layer_infront + 1);
+
+    &.is-done {
+        opacity: 0;
+        }
+    }
+.bar__inner {
+    background-color: $dark;
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    }
+.bar--top {
+    top: 0;
+    }
+.bar--bottom {
+    bottom: 0;
+    }

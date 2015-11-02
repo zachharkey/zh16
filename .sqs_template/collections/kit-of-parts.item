@@ -1,0 +1,23 @@
+{###############################################################################
+    Kit of Parts
+
+    This collection is for developing a kit of parts for your sites
+    module styles. It's similar to a style guide, but its not a style guide.
+    It's more of a plug-and-play approach to creating the pieces of an
+    experience. It's also a very rapid and iterative way of getting shit done.
+
+    For this I usually make a collection called `Kit of Parts` of the
+    collection type `Kit of Parts`.
+
+    `./collections/kit-of-parts.conf`
+    `./collections/kit-of-parts.list`
+    `./collections/kit-of-parts.item`
+###############################################################################}
+<section class="kit-of-parts js-kop">
+    {@|apply kit-of-parts-cover.block}
+    <div class="kit-of-parts__parts">
+        {.section item}
+            {@|apply kit-of-parts-part.block}
+        {.end}
+    </div>
+</section>

@@ -1,0 +1,17 @@
+/******************************************************************************
+ * Page
+ *
+ * This is the basic styling we need to implement some nice page transitions.
+*******************************************************************************/
+.page {
+    width: 100%;
+    transition: opacity $ease-duration $ease-cubic,
+                transform $ease-duration $ease;
+
+    &.is-reactive {
+        transform: translate3d( 0, $wrapper-padding, 0 );
+        }
+    &.is-inactive {
+        opacity: 0;
+        }
+    }

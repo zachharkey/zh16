@@ -1,0 +1,16 @@
+/******************************************************************************
+ * Squarespace Block Options
+ *
+ * Supports user selected options in the CMS for things like galleries.
+*******************************************************************************/
+@for $i from 0 through 10 {
+    .width--#{$i} {
+        width: (100 / $i)#{"%"};
+        }
+}
+
+@for $i from 0 through 50 {
+    .padding--#{$i} {
+        padding: ($i / 2)#{"px"};
+        }
+}

@@ -1,0 +1,24 @@
+/******************************************************************************
+ * Nav Menu
+ *
+ * These styles work alongside the main navigation block for the template.
+ *
+ * `./sqs_template/blocks/menu-nav.block`
+*******************************************************************************/
+.menu-nav {
+    font-size: 0;
+    }
+.menu-nav__ul {
+    display: inline-block;
+    line-height: 1;
+    }
+.menu-nav__li {
+    display: block;
+    }
+.menu-nav__col {
+    display: inline-block;
+    vertical-align: top;
+    }
+.menu-nav__a {
+    cursor: pointer;
+    }

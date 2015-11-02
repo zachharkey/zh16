@@ -1,0 +1,52 @@
+/******************************************************************************
+ * Document
+*******************************************************************************/
+.is-clipped {
+    overflow: hidden;
+}
+
+.is-scrolling {
+    pointer-events: none;
+}
+
+.is-scrolling-up {
+}
+
+.is-scrolling-down {
+}
+
+
+
+/******************************************************************************
+ * Positioning
+*******************************************************************************/
+.is-cover-page {
+}
+
+.is-cover-light {
+    .header:not(.is-utility) {
+        .context-label {
+            color: $white;
+            }
+        .icon--list__wrap {
+            border-top-color: $white;
+            }
+        .icon--list__wrap:after,
+        .icon--list__wrap:before {
+            background-color: $white;
+            }
+    }
+    .header.is-utility {
+        .-light {
+            color: $dark;
+            }
+    }
+}
+
+
+
+/******************************************************************************
+ * Routing
+*******************************************************************************/
+.is-routing {
+}

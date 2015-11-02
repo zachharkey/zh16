@@ -1,0 +1,169 @@
+/******************************************************************************
+ * Galleries
+ *
+ * These gallery styles cover the 4 types that Squarespace offers.
+ * These styles are working in conjunction with some template files and js.
+ *
+ * `./js/galleries/*`
+ * `./sqs_template/blocks/gallery.block`
+ * `./sqs_template/blocks/gallery.block.conf`
+*******************************************************************************/
+
+
+
+/******************************************************************************
+ * Gallery Global
+*******************************************************************************/
+.gallery {
+    font-size: 0;
+    position: relative;
+    user-select: none;
+    }
+.gallery__items {
+    position: relative;
+    }
+.gallery__thumbs {
+    bottom: 50px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    z-index: $z_layer_02;
+    }
+.gallery__items,
+.gallery__thumbs {
+    width: 100%;
+    }
+.gallery__thumb {
+    background-color: $white;
+    border-radius: 4px;
+    display: inline-block;
+    height: 8px;
+    margin: 0 8px;
+    opacity: 0.5;
+    transition: opacity $ease-duration $ease-cubic;
+    width: 8px;
+
+    &.is-active {
+        background-color: $dark;
+        opacity: 1;
+        }
+    }
+.gallery__item {
+    }
+.gallery__image {
+    }
+
+
+/******************************************************************************
+ * Gallery Slideshow
+*******************************************************************************/
+.gallery--slideshow {
+    cursor: pointer;
+    overflow: hidden;
+
+    .gallery__image {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: opacity $ease-duration $ease-cubic;
+        width: 100%;
+        z-index: $z_layer_behind;
+
+        &.is-active {
+            opacity: 1;
+            z-index: $z_layer_01;
+            }
+        &.is-exiting {
+            opacity: 0;
+            z-index: $z_layer_01;
+            }
+        &.is-entering {
+            opacity: 1;
+            z-index: ($z_layer_01 - 1);
+            }
+        }
+}
+
+
+/******************************************************************************
+ * Gallery Slider
+*******************************************************************************/
+.gallery--slider {
+    cursor: grab;
+    height: 100vh;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: opacity $ease-duration $ease-cubic,
+                visibility $ease-duration $ease-cubic;
+    visibility: hidden;
+    white-space: nowrap;
+    width: 100%;
+
+    &:after {
+        background-color: $dark;
+        border-radius: 50px;
+        content: "drag";
+        color: $white;
+        font-size: 18px;
+        height: 100px;
+        left: 50%;
+        line-height: 100px;
+        margin: -50px 0 0 -50px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transition: opacity $ease-duration $ease-cubic,
+                    visibility $ease-duration $ease-cubic;
+        width: 100px;
+        @include font-sans-text();
+        }
+
+    &.is-draggable {
+        opacity: 1;
+        visibility: visible;
+        }
+    &.is-dragged:after {
+        opacity: 0;
+        visibility: hidden;
+        }
+    &.is-dragging {
+        cursor: grabbing;
+        }
+
+    .gallery__image {
+        display: inline-block;
+        margin: 0 11vw;
+        vertical-align: middle;
+        width: auto;
+        }
+}
+
+
+/******************************************************************************
+ * Gallery Grid
+*******************************************************************************/
+.gallery--grid {
+    text-align: center;
+
+    .gallery__items {
+        margin: 0 -10px;
+        }
+
+    .gallery__item {
+        display: inline-block;
+        padding: 10px;
+        }
+}
+
+
+/******************************************************************************
+ * Gallery Stacked
+*******************************************************************************/
+.gallery--stacked {
+    .gallery__image {
+        margin: 10px 0;
+        width: 100%;
+        }
+}

@@ -1,0 +1,50 @@
+{###############################################################################
+    Header partial
+
+    This is applied in `template.conf`
+    It is better to create a header/footer partial in order to keep a level
+    of consistency for your project. Squarespace operates with the idea of
+    layouts which wrap a central injection point for content. This breaks that
+    mold a little but not entirely. Just an extra level of abstraction to keep
+    shit tite!
+###############################################################################}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+        <!-- App title should be changed to... whatever -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Templar" />
+
+
+        <!-- App icon if you please :-P -->
+        <link rel="apple-touch-icon-precomposed" href="" />
+
+
+        {squarespace-headers}
+    </head>
+    <body>
+        <!-- This is an example header, do what you want here -->
+        <header class="header js-header">
+            <div class="header__main valigner">
+                <div class="valigner__cell">
+                    <div class="header__util -span column--2of4 -text--left">&nbsp;</div>
+                    <div class="header__util -span column--2of4 -text--right">
+                        <span class="icon--faux icon--list js-controller--nav">
+                            <span class="icon--faux__wrap icon--list__wrap"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Partial applied: ./blocks/menu-nav.block -->
+        <squarespace:navigation navigationId="menu-nav" template="menu-nav" />
+
+
+        <main class="page js-page">

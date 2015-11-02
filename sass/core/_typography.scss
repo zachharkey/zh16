@@ -1,0 +1,180 @@
+/******************************************************************************
+ * Typography
+ *
+ * Type on the web is important since it can suck, a lot.
+ * These styles will help us run a tight ship with type layouts.
+*******************************************************************************/
+
+
+
+/******************************************************************************
+ * Meta Data
+*******************************************************************************/
+.meta {
+    @include meta();
+    }
+.meta + .meta {
+    margin-left: $mobile-padding;
+    }
+.meta__cap {
+    display: block;
+    //@include font-sans-text-[whatever weight you use]();
+    }
+.caption {
+    max-width: $cap-width;
+    min-width: $cap-width;
+    }
+
+
+
+/******************************************************************************
+ * Emphasis
+ *
+ * You'll want some font for this like `bold`, `medium` or `semibold`.
+ * You can add weighted variants in ./sass/config/_mixins.scss
+*******************************************************************************/
+/*
+.em {
+    @include font-serif-text-[whatever weight you use]();
+    }
+*/
+
+
+
+/******************************************************************************
+ * Paragraphs
+*******************************************************************************/
+.p {
+    @include p();
+    }
+.p + .p {
+    margin-top: ($mobile-padding / 2);
+    }
+.p--col {
+    max-width: $p-width;
+    width: 100%;
+    }
+
+
+
+/******************************************************************************
+ * Links
+*******************************************************************************/
+.a {
+    @include a();
+    }
+.a-link {
+    color: $dark;
+    border-bottom: 1px solid transparent;
+    display: inline;
+    transition: border-color $fast-duration $ease;
+    }
+
+.a-h {
+    border-bottom: 1px solid transparent;
+    color: $dark;
+    display: inline-block;
+    font-size: 40px;
+    transition: color $fast-duration $ease;
+    @include font-serif-text();
+
+    &.is-active {
+        border-bottom: 1px solid $grey-text;
+        color: $grey-text;
+        }
+    }
+
+
+
+/******************************************************************************
+ * Quotes
+*******************************************************************************/
+.bq {}
+.bq__quote {
+    @include bq();
+
+    &:before {
+        content: "\201C";
+        }
+    &:after {
+        content: "\201D";
+        }
+    }
+.bq__source {
+    padding-top: 35px;
+    }
+
+
+
+/******************************************************************************
+ * Headlines
+*******************************************************************************/
+.h6,
+.h5,
+.h4,
+.h3,
+.h2,
+.h1 {
+    }
+
+.h1 {
+    @include h1();
+    }
+.h2 {
+    @include h2();
+    }
+.h3 {
+    @include h3();
+    }
+
+
+
+/******************************************************************************
+ * Titles
+*******************************************************************************/
+.headline {
+    @include headline();
+    }
+.title {
+    @include title();
+    }
+
+
+
+/******************************************************************************
+ * Responsive
+*******************************************************************************/
+@media only screen and ( min-width: $break-desktop-large ) {
+    
+}
+
+
+
+@media only screen and ( max-width: $break-laptop-full ) {
+    
+}
+
+
+
+@media only screen and ( max-width: $break-laptop-medium ) {
+    .p {
+        font-size: $p-size-medium;
+        }
+}
+
+
+
+@media only screen and ( max-width: $break-mobile-full ) {
+    .p {
+        font-size: $p-size-small;
+        }
+    .h1 {
+        font-size: $h1-size-small;
+        }
+    .bq {
+        font-size: $bq-size-small;
+        }
+    .meta {
+        font-size: $meta-size-small;
+        }
+}

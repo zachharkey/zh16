@@ -1,0 +1,15 @@
+{###############################################################################
+    Kit of Parts Part
+
+    This is a kit of parts, part. It gets applied in collection files:
+
+    `./collections/kit-of-parts.list`
+    `./collections/kit-of-parts.item`
+###############################################################################}
+<div class="kit-of-parts__part kop--{urlId} js-kop-part" data-content-field="main-content">
+    <span class="kit-of-parts__part__label meta -brackets"><a class="-dark" href="{fullUrl}">{title}</a></span>
+    <span class="kit-of-parts__part__style meta -grey -text--right js-kop-styles"></span>
+    <div class="kit-of-parts__inner">
+        {body}
+    </div>
+</div>

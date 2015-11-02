@@ -1,0 +1,26 @@
+{###############################################################################
+    Footer partial
+
+    This is applied in `template.conf`
+    It is better to create a header/footer partial in order to keep a level
+    of consistency for your project. Squarespace operates with the idea of
+    layouts which wrap a central injection point for content. This breaks that
+    mold a little but not entirely. Just an extra level of abstraction to keep
+    shit tite!
+###############################################################################}
+        </main>
+
+
+        <footer class="footer js-footer"></footer>
+
+
+        <!-- Partial applied: ./blocks/intro.block -->
+        {@|apply intro.block}
+
+
+        <squarespace:script src="app.js" combo="true" />
+
+
+        {squarespace-footers}
+    </body>
+</html>

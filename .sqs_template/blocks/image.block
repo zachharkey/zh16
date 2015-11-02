@@ -1,0 +1,70 @@
+{###############################################################################
+    BLOCK OVERRIDE
+    This file, in conjunction with its `.conf` file,
+    are overriding the Squarespace system default rendering for this block type.
+
+    OBJECT MODEL
+    info: =>
+
+
+        altText:                            string
+        description:                        boolean
+        hasAspectRatio:                     boolean
+        hasDescription:                     boolean
+        hasPercentageWidth:                 boolean
+        hasRatio:                           boolean
+        imageWidth:                         number
+        imageWidthPercentage:               number
+        isLightBox:                         boolean
+        isLinkTo:                           boolean
+        isVSize:                            boolean
+        layout:                             string
+        linkTo:                             string
+        newwindow:                          boolean
+        ratio:                              float
+        showCaption:                        boolean
+        src:                                string
+        stretch:                            boolean
+        textWidthPercentage:                number
+###############################################################################}
+
+
+
+{###############################################################################
+    Asset URL means block partial
+###############################################################################}
+
+{.if assetUrl}
+    <img class="image js-lazy-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" />
+{.end}
+
+
+
+{###############################################################################
+    Item Object means system block
+###############################################################################}
+
+{.if item}
+    {.if info.showCaption}
+        <figure class="figure">
+            <img class="figure__image image js-lazy-image" data-img-src="{item.assetUrl}" data-variants="{item.systemDataVariants}" />
+            <figcaption class="figure__cap meta caption -grey">
+                {info.altText}
+            </figcaption>
+        </figure>
+    {.or}
+        <img class="image js-lazy-image" data-img-src="{item.assetUrl}" data-variants="{item.systemDataVariants}" />
+    {.end}
+{.end}
+
+
+
+{###############################################################################
+    How to view the json context for this block partial
+
+    1. Paste this script outside of this ignored comment
+    2. Push to master for the template
+    3. Refresh your page with the ?nocache query string
+
+    <script>console.log( {@|json-pretty} );</script>
+###############################################################################}

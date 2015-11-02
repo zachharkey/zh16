@@ -1,0 +1,133 @@
+/******************************************************************************
+ * Mixins
+ *
+ * Nothing makes your variables shine more than some HAWT mixins around them!
+*******************************************************************************/
+
+
+
+/******************************************************************************
+ * Fonts: Util
+*******************************************************************************/
+@mixin font-normal() {
+    font-stretch: normal;
+    font-style: normal;
+}
+
+
+
+/******************************************************************************
+ * Font Stacks
+ *
+ * Adding weights is pretty easy. Say you have a literal `semibold`.
+ * You would then simply create a mixin a little like this:
+ *
+ * @mixin font-sans-text-semibold() {
+ *     font-family: $sans-serif-text;
+ *     font-weight: 500;
+ *     @include font-normal();
+ * }
+*******************************************************************************/
+@mixin font-sans-text() {
+    font-family: $sans-serif-text;
+    font-weight: 400;
+    @include font-normal();
+}
+@mixin font-serif-text() {
+    font-family: $serif-text;
+    font-weight: 400;
+    @include font-normal();
+}
+
+
+
+/******************************************************************************
+ * Type
+*******************************************************************************/
+@mixin meta() {
+    color: $dark;
+    font-size: $meta-size;
+    line-height: 1.8;
+    @include font-sans-text();
+}
+@mixin b() {
+    font-size: 24px;
+    line-height: 1.66666667;
+    @include font-sans-text();
+}
+@mixin p() {
+    font-size: $p-size;
+    line-height: 2.22222222;
+    max-width: $p-width;
+    width: 100%;
+    @include font-sans-text();
+}
+@mixin a() {
+    color: $dark;
+    display: inline;
+    font-size: $p-size;
+    line-height: 2.22222222;
+    text-decoration: none;
+    @include font-sans-text();
+}
+@mixin h1() {
+    font-size: $h1-size;
+    line-height: 1.2;
+    @include font-serif-text();
+}
+@mixin h2() {
+    font-size: $h2-size;
+    line-height: 1.375;
+    max-width: $lead-in-width;
+    width: 100%;
+    @include font-serif-text();
+}
+@mixin h3() {
+    font-size: $h3-size;
+    line-height: 1.28571429;
+    @include font-serif-text();
+}
+@mixin bq() {
+    font-size: $bq-size;
+    line-height: 1.375;
+    max-width: $bq-width;
+    width: 100%;
+    @include font-serif-text();
+}
+@mixin title() {
+    color: $dark;
+    font-size: $title-size-px;
+    line-height: 1.2;
+    @include font-serif-text();
+}
+@mixin headline() {
+    color: $dark;
+    font-size: $headline-size;
+    line-height: 1.08695652;
+    @include font-serif-text();
+}
+
+
+
+/******************************************************************************
+ * Animations
+*******************************************************************************/
+@mixin ani-lift-block() {
+    transform: translate3d( 0, $nudge-size, 0 );
+    transition: transform $ease-duration $ease;
+
+    &.is-active {
+        transform: translate3d( 0, 0, 0 );
+        }
+    &.is-loading {
+        transform: translate3d( 0, ($nudge-size * 2), 0 );
+        }
+}
+@mixin ani-move-block() {
+    transition: transform $ease-duration $ease,
+                opacity $ease-duration $ease-cubic;
+}
+@mixin ani-move-block-delayed( $delay: 200ms ) {
+    transition: opacity $ease-duration $ease $delay,
+                transform $ease-duration $ease $delay;
+}

@@ -1,0 +1,27 @@
+{###############################################################################
+    BLOCK OVERRIDE
+    This file, in conjunction with its `.conf` file,
+    are overriding the Squarespace system default rendering for this block type.
+
+    OBJECT MODEL
+    =>
+
+
+        collection:     object
+        isActive:       boolean
+###############################################################################}
+<a class="a" href="{collection.fullUrl}">
+    {collection.title}
+</a>
+
+
+
+{###############################################################################
+    How to view the json context for this block partial
+
+    1. Paste this script outside of this ignored comment
+    2. Push to master for the template
+    3. Refresh your page with the ?nocache query string
+
+    <script>console.log( {@|json-pretty} );</script>
+###############################################################################}

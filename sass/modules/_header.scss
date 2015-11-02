@@ -1,0 +1,18 @@
+/******************************************************************************
+ * Header
+ *
+ * Do it or don't. Headers are cool, I think :-P
+*******************************************************************************/
+.header {
+    background-color: transparent;
+    font-size: 0;
+    left: 0;
+    padding: $header-height $wrapper-padding 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $z_layer_01;
+    }
+.header__main {
+    position: relative;
+    }

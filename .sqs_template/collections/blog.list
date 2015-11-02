@@ -1,0 +1,10 @@
+{###############################################################################
+    Blog system collection
+
+    This is useful for chronological collections of things. Its called `blog`
+    but don't think of it like that. It's just a default system collection
+    for creating content in your project.
+###############################################################################}
+{.repeated section items}
+    <!-- Make magic happen here! -->
+{.end}

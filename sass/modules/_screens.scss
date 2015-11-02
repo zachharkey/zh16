@@ -1,0 +1,51 @@
+/******************************************************************************
+ * Screens
+ *
+ * These are fullscreen `modal` moments. I hate the word `modal`. So, screens.
+*******************************************************************************/
+.screen {
+    background-color: $white;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity $ease-duration $ease-cubic,
+                visibility $ease-duration $ease-cubic,
+                z-index $ease-duration $ease-cubic;
+    visibility: hidden;
+    z-index: $z_layer_behind;
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+        z-index: ($z_layer_infront + 1);
+        -webkit-overflow-scrolling: touch;
+        }
+    }
+.screen--dark {
+    background-color: $dark;
+    }
+.screen__wrap {
+    height: 100%;
+    opacity: 0;
+    transform: translate3d( 0, $nudge-size, 0 );
+    @include ani-move-block-delayed();
+    }
+.screen.is-active {
+    .screen__wrap {
+        opacity: 1;
+        transform: translate3d( 0, 0, 0 );
+        }
+}
+
+
+
+@media only screen and ( max-width: $break-mobile-full ) {
+    .screen {
+        padding: $mobile-padding;
+        }
+}

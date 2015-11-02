@@ -1,0 +1,29 @@
+{###############################################################################
+    BLOCK OVERRIDE
+    This file, in conjunction with its `.conf` file,
+    are overriding the Squarespace system default rendering for this block type.
+
+    OBJECT MODEL
+    =>
+
+
+        quote:          string
+        source:         string
+###############################################################################}
+<figure class="bq">
+    <blockquote class="bq__quote">{quote|safe}</blockquote>
+    <figcaption class="bq__source meta -grey">{source|safe}</figcaption>
+</figure>
+
+
+
+
+{###############################################################################
+    How to view the json context for this block partial
+
+    1. Paste this script outside of this ignored comment
+    2. Push to master for the template
+    3. Refresh your page with the ?nocache query string
+
+    <script>console.log( {@|json-pretty} );</script>
+###############################################################################}

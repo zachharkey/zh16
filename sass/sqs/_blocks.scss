@@ -1,0 +1,100 @@
+/******************************************************************************
+ * Squarespace Blocks
+ *
+ * Take control of the system block stylings.
+*******************************************************************************/
+// Text content
+.sqs-block {
+    h1 {
+        @include h1();
+        }
+    h2 {
+        @include h2();
+        }
+    h3 {
+        @include h3();
+        }
+    h1,
+    h2,
+    h3 {
+        strong {
+            @include font-serif-text();
+            }
+    }
+
+
+    p {
+        @include p();
+
+        a {
+            border-bottom: 1px solid $grey-link;
+            color: $grey-link;
+            }
+
+        strong {
+            @include b();
+            }
+    }
+    p + p {
+        margin-top: ($mobile-padding / 2);
+        }
+}
+
+// Code, html and quote content
+.sqs-block-code,
+.sqs-block-html,
+.sqs-block-quote {
+    .sqs-block-content {
+        display: inline-block;
+        }
+}
+
+// Quote figures
+.sqs-block-quote figure {
+    margin: 0 !important;
+    }
+
+
+
+/******************************************************************************
+ * Squarespace Block Spacing
+*******************************************************************************/
+.sqs-block {
+    padding: 0 !important;
+    }
+.sqs-layout > .sqs-row {
+    margin: 0 !important;
+    }
+
+
+
+/******************************************************************************
+ * Squarespace Block Animation
+*******************************************************************************/
+.sqs-block-content {
+    opacity: 0;
+    transition: transform $ease-duration $ease,
+                opacity $ease-duration $ease-out;
+    transform: translate3d( 0, $nudge-size, 0 );
+
+    &.is-active {
+        opacity: 1;
+        transform: translate3d( 0, 0, 0 );
+        }
+    &.is-inactive {
+        opacity: 0;
+        transform: translate3d( 0, 0, 0 );
+        }
+    }
+
+
+
+/******************************************************************************
+ * Squarespace Edit Mode
+*******************************************************************************/
+.sqs-edit-mode {
+    .sqs-block-content {
+        opacity: 1 !important;
+        transform: translate3d( 0, 0, 0 ) !important;
+        }
+}

@@ -1,0 +1,71 @@
+/******************************************************************************
+ * Kit of Parts
+ *
+ * This is for the primary `style guide` like section.
+ * More thoughts in the template...
+ *
+ * `./sqs_template/blocks/kit-of-parts-cover.block`
+ * `./sqs_template/blocks/kit-of-parts-part.block`
+ * `./sqs_template/collections/kit-of-parts-part.conf`
+ * `./sqs_template/collections/kit-of-parts-part.item`
+ * `./sqs_template/collections/kit-of-parts-part.list`
+*******************************************************************************/
+
+
+
+.kit-of-parts {}
+.kit-of-parts__part {
+    border-top: 1px solid $grey-rule;
+    padding-bottom: $block-padding;
+    padding-left: $wrapper-padding;
+    padding-right: $wrapper-padding;
+    padding-top: $block-padding;
+    position: relative;
+
+    &:first-child {
+        border-top: 0;
+        }
+    }
+.kit-of-parts__parts {
+    text-align: center;
+    }
+.kit-of-parts__inner {
+    display: inline-block;
+    max-width: $kop-width;
+    text-align: left;
+    width: 100%;
+    }
+.kit-of-parts__part__label {
+    left: $wrapper-padding;
+    position: absolute;
+    top: $mobile-padding;
+    }
+.kit-of-parts__part__style {
+    opacity: 0;
+    position: absolute;
+    right: $wrapper-padding;
+    top: $mobile-padding;
+    transition: opacity $ease-duration $ease;
+
+    span {
+        display: block;
+        margin-bottom: $mobile-padding;
+        }
+    }
+.kop--image,
+.kop--image-grid,
+.kop--image-stack,
+.kop--carousel,
+.kop--belt-dragger {
+    > .kit-of-parts__inner {
+        max-width: 100%;
+        }
+    }
+.kop--image {
+    padding-left: $image-padding;
+    padding-right: $image-padding;
+    }
+.kop--belt-dragger {
+    padding-left: 0;
+    padding-right: 0;
+    }

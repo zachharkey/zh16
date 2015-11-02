@@ -1,0 +1,24 @@
+{###############################################################################
+    Kit of Parts Cover
+
+    This is a kit of parts cover. It gets applied in collection files:
+
+    `./collections/kit-of-parts.list`
+    `./collections/kit-of-parts.item`
+###############################################################################}
+<div class="cover js-cover -bg-black" data-tone="light">
+    <div class="valigner wrapper">
+        <div class="valigner__cell">
+            <div class="headline -light">
+                {collection.title}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="title context-label js-context-label">
+    {.if item}
+        <a class="-light" href="{collection.fullUrl}">{collection.navigationTitle}</a>&nbsp;/&nbsp;{item.title}
+    {.or}
+        {collection.navigationTitle}
+    {.end}
+</div>

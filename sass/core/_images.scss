@@ -1,0 +1,58 @@
+/******************************************************************************
+ * Images
+ *
+ * Some default styles that help images layout better in general.
+*******************************************************************************/
+.image {
+    max-width: 100%;
+    width: 100%;
+    }
+
+
+
+/******************************************************************************
+ * Covers
+ *
+ * These are fullscreen bleed moments.
+*******************************************************************************/
+.cover {
+    height: 100vh;
+    width: 100%;
+    }
+.cover__image {
+    height: 100%;
+    width: 100%;
+    }
+
+
+
+/******************************************************************************
+ * Aspect Ratios - Squarespace
+*******************************************************************************/
+.aspect--square {
+    padding-bottom: percentage( 1 / 1 );
+    }
+.aspect--standard {
+    padding-bottom: percentage( 2 / 3 );
+    }
+.aspect--standard-vertical {
+    padding-bottom: percentage( 3 / 2 );
+    }
+.aspect--four-three {
+    padding-bottom: percentage( 3 / 4 );
+    }
+.aspect--four-three-vertical {
+    padding-bottom: percentage( 3 / 4 );
+    }
+.aspect--widescreen {
+    padding-bottom: percentage( 9 / 16 );
+    }
+.aspect--anamorphic-widescreen {
+    padding-bottom: percentage( 9 / 16 );
+    }
+
+
+
+.aspect--boutique {
+    padding-bottom: 41.875%;
+    }

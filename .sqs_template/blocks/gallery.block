@@ -1,0 +1,148 @@
+{###############################################################################
+    BLOCK OVERRIDE
+    This file, in conjunction with its `.conf` file,
+    are overriding the Squarespace system default rendering for this block type.
+
+    OBJECT MODEL
+    Available options properties depend on which gallery type is rendering
+    Option values that are null have an unknown data type to me as of yet
+    options: =>
+
+
+        SLIDESHOW
+        aspectRatio:            null
+        auto-crop:              boolean
+        autoplay:               boolean
+        collectionId:           string
+        controls:               boolean
+        design:                 string
+        existingGallery:        null
+        floatDir:               null
+        hSize:                  null
+        meta-position:          string
+        methodOption:           string
+        show-meta:              boolean
+        show-meta-on-hover:     boolean
+        thumbnails:             boolean
+        transientGalleryId:     string
+        vSize:                  null
+
+
+        SLIDER
+        active-alignment:       string
+        autoplay:               boolean
+        collectionId:           string
+        controls:               boolean
+        design:                 string
+        existingGallery:        null
+        floatDir:               null
+        hSize:                  null
+        methodOption:           string
+        transientGalleryId:     string
+        vSize:                  null
+
+
+        GRID
+        aspect-ratio:           string
+        aspectRatio:            null
+        collectionId:           string
+        design:                 string
+        existingGallery:        null
+        floatDir:               null
+        hSize:                  null
+        lightbox:               boolean
+        methodOption:           string
+        padding:                number
+        square-thumbs:          boolean
+        thumbnails-per-row:     number
+        transientGalleryId:     string
+        vSize:                  null
+
+
+        STACKED
+        aspectRatio:            null
+        collectionId:           string
+        design:                 string
+        existingGallery:        null
+        floatDir:               null
+        hSize:                  null
+        methodOption:           string
+        show-meta-basic:        boolean
+        transientGalleryId:     string
+        vSize:                  null
+###############################################################################}
+
+
+
+{###############################################################################
+    Options means system block
+###############################################################################}
+
+{.if options}
+<section class="gallery gallery--{options.design} js-gallery js-gallery-{options.design}" data-gallery-type="{options.design}">
+    {.equal? options.design "slider"}
+        <div class="valigner">
+            <div class="valigner__cell">
+                <div class="gallery__items js-gallery-items">
+                    {.repeated section items}
+                        <img class="gallery__image js-gallery-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" />
+                    {.end}
+                </div>
+            </div>
+        </div>
+
+    {.or equal? options.design "slideshow"}
+        <ul class="gallery__items js-gallery-items aspect--widescreen">
+            {.repeated section items}
+                <li class="gallery__image js-gallery-image -cover" data-img-src="{assetUrl}" data-variants="{systemDataVariants}"></li>
+            {.end}
+        </ul>
+        <div class="gallery__idx">
+            <span class="meta js-gallery-idx -span -brackets">1 / {items|count}</span>
+        </div>
+
+    {.or equal? options.design "grid"}
+        <ul class="gallery__items js-gallery-items">
+            {.repeated section items}
+                <li class="gallery__item js-gallery-item width--{options.thumbnails-per-row} padding--{options.padding}">
+                    <div class="gallery__image js-gallery-image -cover aspect--{options.aspect-ratio}" data-img-src="{assetUrl}" data-variants="{systemDataVariants}"></div>
+                </li>
+            {.end}
+        </ul>
+
+    {.or equal? options.design "stacked"}
+        <div class="gallery__items js-gallery-items">
+            {.repeated section items}
+                <img class="gallery__image js-gallery-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" />
+            {.end}
+        </div>
+    {.end}
+</section>
+{.or}
+
+
+
+{###############################################################################
+    No Options means block partial is being applied
+###############################################################################}
+
+<section class="gallery gallery--stacked js-gallery js-gallery-stacked" data-gallery-type="stacked">
+    <div class="gallery__items js-gallery-items">
+        {.repeated section items}
+            <img class="gallery__image js-gallery-image" data-img-src="{assetUrl}" data-variants="{systemDataVariants}" />
+        {.end}
+    </div>
+</section>
+{.end}
+
+
+
+{###############################################################################
+    How to view the json context for this block partial
+
+    1. Paste this script outside of this ignored comment
+    2. Push to master for the template
+    3. Refresh your page with the ?nocache query string
+
+    <script>console.log( {@|json-pretty} );</script>
+###############################################################################}
